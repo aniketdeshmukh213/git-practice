@@ -1,7 +1,4 @@
 login feature added
 this is content from main branch
-<<<<<<< HEAD
-this line is from main and feature branch
-=======
-this line is from feature branch
->>>>>>> feature-login
+this line is final resolved version
+
