@@ -1,0 +1,4 @@
+.log
+.env
+node_module/
+temp.txt
