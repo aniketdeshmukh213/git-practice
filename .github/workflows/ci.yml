@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI with Env
 
 on:
   push:
@@ -6,14 +6,11 @@ on:
       - main
 
 jobs:
-  build:
+  demo-env:
     runs-on: ubuntu-latest
+env:
+APP_NAME: DevopsApp
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run basic test
-        run: |
-          echo "CI pipeline running"
-          cat devops.txt
+      - name: Print env variables
+        uses: echo "App name is $APP_NAME"
