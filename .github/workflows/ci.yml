@@ -1,4 +1,4 @@
-name: CI with Env
+name: CI with Env and Secret
 
 on:
   push:
@@ -8,9 +8,16 @@ on:
 jobs:
   demo-env:
     runs-on: ubuntu-latest
-env:
-APP_NAME: DevopsApp
+
+    env:
+      APP_NAME: DevOpsApp
 
     steps:
-      - name: Print env variables
-        uses: echo "App name is $APP_NAME"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print env variable
+        run: echo "App name is $APP_NAME"
+
+      - name: Use secret
+        run: echo "Secret is ${{ secrets.DEMO_SECRET }}"
