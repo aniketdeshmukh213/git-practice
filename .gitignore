@@ -1,4 +1,6 @@
 .log
 .env
-node_module/
+node_modules/
 temp.txt
+.aws/
+app.log
