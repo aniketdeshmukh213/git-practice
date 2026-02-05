@@ -1,4 +1,4 @@
-name: DevOps CI Demo
+name: CI Pipeline
 
 on:
   push:
@@ -8,10 +8,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run echo command
-        run: echo "CI pipeline is running successfully"
+      - name: Build step
+        run: echo "Building application"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        run: echo "Running tests"
+
